@@ -2,12 +2,7 @@
 name = "python-lambda"
 version = "0.1.0"
 description = "Modular Python Lambda"
-authors = ["Allison Cappelli <acappelli@cvent.com>"]
-
-# [[tool.poetry.source]]
-# name = "cvent"
-# priority = "default"
-# url = "https://nexus.core.cvent.org/nexus/repository/pypi-all/simple"
+authors = ["N/A <noreply@cvent.com>"]
 
 [tool.poetry.dependencies]
 aws-lambda-typing = "^2.10.1"
