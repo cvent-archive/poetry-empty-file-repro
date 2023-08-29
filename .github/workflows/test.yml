@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@v3
       - run: docker build --progress=plain --no-cache -t python-lambda .
       - run: docker run --entrypoint /bin/ls python-lambda -l /app/.venv/lib/python3.9/site-packages/jira/__init__.py
-      - run: docker run --entrypoint /app/.venv/bin/python -c 'from jira import JIRA'
+      - run: docker run --entrypoint /app/.venv/bin/python python-lambda -c 'from jira import JIRA'
   native:
     runs-on: ubuntu-latest
     steps:
