@@ -21,3 +21,14 @@ jobs:
       - run: poetry install --no-interaction --no-ansi -vvv
       - run: ls -l .venv/lib/python3.9/site-packages/jira/__init__.py
       - run: .venv/bin/python -c 'from jira import JIRA'
+  no-repro:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - run: pip install "poetry==1.6.1"
+      - run: poetry config virtualenvs.in-project true
+      - run: poetry init --no-interaction --python='^3.9' --dependency=jira
+      - run: ls -l .venv/lib/python3.9/site-packages/jira/__init__.py
+      - run: .venv/bin/python -c 'from jira import JIRA'
