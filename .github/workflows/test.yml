@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: docker build --progress=plain --no-cache -t python-lambda . && docker run --entrypoint /bin/ls -it python-lambda -l /app/.venv/lib/python3.9/site-packages/jira/__init__.py
+      - run: docker build --progress=plain --no-cache -t python-lambda . && docker run -t --entrypoint /bin/ls -it python-lambda -l /app/.venv/lib/python3.9/site-packages/jira/__init__.py
   native:
     runs-on: ubuntu-latest
     steps:
